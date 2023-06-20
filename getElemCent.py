@@ -34,12 +34,12 @@ if __name__ == '__main__':
     elements = np.loadtxt(elementFile,delimiter=',',dtype=int)
 
     numNodes = nodes.shape[0]
-    print 'Number of Nodes: ' + str(numNodes)
+    print ('Number of Nodes: ' + str(numNodes))
 
     numElements = elements.shape[0]
     nodesPerElem = elements.shape[1] - 1
-    print 'Number of Elements: ' + str(numElements)
-    print 'Number of Nodes per  Elements: ' + str(nodesPerElem)
+    print ('Number of Elements: ' + str(numElements))
+    print ('Number of Nodes per  Elements: ' + str(nodesPerElem))
 
     for e in range(numElements):
         ind = elements[e,1:10]

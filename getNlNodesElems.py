@@ -5,10 +5,10 @@ import numpy as np
 dataPath = './data/'
 
 # mesh input file (user input)
-neperInput = 'paraFipMesh_11.inp'
+#neperInput = 'paraFipMesh_11.inp'
 #neperInput = 'paraFipMesh_19.inp'
 #neperInput = 'paraFipMesh_32.inp'
-#neperInput = 'paraFipMesh_48.inp'
+neperInput = 'paraFipMesh_48.inp'
 
 #abaqus output files (these always stay the same)
 nodeFile = 'nlNodes.inp'
