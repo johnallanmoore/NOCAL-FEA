@@ -1,13 +1,17 @@
 #!/usr/bin/python
 
-import numpy as np
-import datetime
+
 
 
 ################################################################
 ################# start main Program ##########################
 ###############################################################
-if __name__ == '__main__':
+#if __name__ == '__main__':
+
+def getElemCent():
+    
+    import numpy as np
+    import datetime
 
     ###############################
     ######   USER INPUTS  #########
