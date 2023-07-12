@@ -12,4 +12,8 @@ thisdict = {
 }
 
 
-print(thisdict)
+#print(thisdict)
+    
+#print(thisdict["neperInput"])
+    
+
