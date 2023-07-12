@@ -2,3 +2,6 @@ nl*.inp
 *-ElemCent.inp
 *~*
 *.pyc
+*-Elsets.inp
+*-ElsetsCentR.inp
+*-ElsetsMat.inp

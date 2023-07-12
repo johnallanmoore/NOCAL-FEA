@@ -6,7 +6,7 @@ Created on Thu Jun 29 11:55:50 2023
 """
 
 thisdict = {
-    'neperInput' : 'paraFipMesh_48.inp',
+    'neperInput' : 'paraFipMesh_11.inp',
     'deckName' : 'paraFipMesh_11'
     
 }
