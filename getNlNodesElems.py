@@ -2,6 +2,7 @@
 def getNlNodesElem():
     
     import numpy as np
+    from dictionary import thisdict 
     
     dataPath = './data/'
     
@@ -9,7 +10,7 @@ def getNlNodesElem():
     #neperInput = 'paraFipMesh_11.inp'
     #neperInput = 'paraFipMesh_19.inp'
     #neperInput = 'paraFipMesh_32.inp'
-    neperInput = 'paraFipMesh_48.inp'
+    neperInput = thisdict["neperInput"]
     
     #abaqus output files (these always stay the same)
     nodeFile = 'nlNodes.inp'

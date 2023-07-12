@@ -12,13 +12,14 @@ def getElemCent():
     
     import numpy as np
     import datetime
+    from dictionary import thisdict 
 
     ###############################
     ######   USER INPUTS  #########
     ###############################
 
     # input deck name without .inp (i.e., the output of this script)
-    deckName = 'paraFipMesh_11'
+    deckName = thisdict["deckName"]
 
     ###############################
     ######   LOAD FILES   #########
@@ -44,6 +45,7 @@ def getElemCent():
     nodesPerElem = elements.shape[1] - 1
     print ('Number of Elements: ' + str(numElements))
     print ('Number of Nodes per  Elements: ' + str(nodesPerElem))
+    print(deckName)
 
     for e in range(numElements):
         ind = elements[e,1:10]
