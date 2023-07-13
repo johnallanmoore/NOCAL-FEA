@@ -1,4 +1,3 @@
-#!/usr/bin/python
 def getNlNodesElem():
     
     import numpy as np
