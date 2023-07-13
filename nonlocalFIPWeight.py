@@ -6,6 +6,7 @@ def nonlocalFIPWeight():
     import sys
 
     dataPath = './data/'
+    resultsPath = './results/'
 
     deckName = 'paraFipMesh_11'
 
@@ -16,7 +17,7 @@ def nonlocalFIPWeight():
     # length scale
     L = 0.13365046175
 
-    outputfilename1=resultsFileName+'-nonlocalFIP_NCW.txt'
+    outputfilename1=resultsPath+resultsFileName+'-nonlocalFIP_NCW.txt'
     
 
     ## open txt file to write to

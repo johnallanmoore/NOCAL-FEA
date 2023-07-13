@@ -9,6 +9,7 @@ def nonlocalFIP():
     resultsFileName = 'paraFipMesh-FIP_1_11.txt'
 
     dataPath = './data/'
+    resultsPath = './results/'
 
     deckName = 'paraFipMesh_11'
 
@@ -17,9 +18,9 @@ def nonlocalFIP():
     isNonConf = False
 
     if isNonConf == True:
-        outputfilename1=resultsFileName+'-nonlocalFIP_NC.txt'
+        outputfilename1=resultsPath+resultsFileName+'-nonlocalFIP_NC.txt'
     else:
-        outputfilename1=resultsFileName+'-nonlocalFIP_C.txt'
+        outputfilename1=resultsPath+resultsFileName+'-nonlocalFIP_C.txt'
 
     ## open txt file to write to
     out1 = open(outputfilename1,'w')
