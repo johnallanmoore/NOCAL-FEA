@@ -16,7 +16,6 @@ def nonlocalFIPWeight():
     # length scale
     L = 0.13365046175
 
-
     outputfilename1=resultsFileName+'-nonlocalFIP_NCW.txt'
     
 
