@@ -37,7 +37,7 @@ def getElemInd(f, numElements, elemCent, dr):
 
     return elemInd
 
-def multiprocessing_func(fip, ijk):
+def multiprocessing_func(fip, ijk, total, numElements,elemCent, dr):
     print (str(fip+1) + '/' + str(total))
 
     elemInd = getElemInd(fip, numElements, elemCent, dr)
@@ -57,16 +57,16 @@ if __name__ == '__main__':
     deckName = thisdict["deckName"]
 
     # element Set name
-    elsetName = 'nlFip'
+    elsetName = thisdict["elsetName"]
 
     #length of edge of square nl volume
-    dx = 0.215443469
+    dx = thisdict["dx"]
 
     # radius of equivelent volume 
     dr = ((3./4.)*dx**3./np.pi)**(1./3.)
 
     #number of processors
-    numProc = 4
+    numProc = thisdict["numProc"]
 
     ###############################
     ######   LOAD FILES   #########
@@ -111,7 +111,6 @@ if __name__ == '__main__':
     nodesPerElem = elements.shape[1] - 1
     print ('Number of Elements: ' + str(numElements))
     print ('Number of Nodes per  Elements: ' + str(nodesPerElem))
-    print(deckName)
 
     fipCount = 1
     print ('start fip count           : ' + str(datetime.datetime.now()))
@@ -124,7 +123,7 @@ if __name__ == '__main__':
     #total = 1000
     
     pool = multiprocessing.Pool(processes = numProc)
-    elemIndArray = pool.map(partial(multiprocessing_func,ijk=range(total)), range(total))
+    elemIndArray = pool.map(partial(multiprocessing_func,ijk=range(total), total=total, numElements=numElements, elemCent=elemCent, dr=dr), range(total))
 
     sizeElemInd = 0
 
