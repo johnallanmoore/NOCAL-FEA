@@ -9,7 +9,7 @@ thisdict = {
     'neperInput' : 'paraFipMesh_11.inp',
     'deckName' : 'paraFipMesh_11',
     'elsetName':'nlFip',
-    'numProc': 1,
+    'numProc': 2,
     'dx' : 0.215443469,
     'isWeight': 'True',
     'resultsFileName' : 'paraFipMesh-FIP_1_11.txt',

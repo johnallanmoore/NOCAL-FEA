@@ -31,6 +31,7 @@ def nonlocalFIP():
     elsetsMat = np.loadtxt(elsetsFile,delimiter=',',dtype=int)
 
     numVols = len(elsetsMat[:,0])
+    #numVols = len(elsetsMat)
 
     fipFile = dataPath + resultsFileName
     localFipMat = np.loadtxt(fipFile,delimiter=',')
