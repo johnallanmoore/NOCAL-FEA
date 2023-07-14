@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+
 import numpy as np
 import datetime
 import multiprocessing
@@ -47,7 +48,7 @@ def multiprocessing_func(fip, ijk, total, numElements,elemCent, dr):
 ################################################################
 ################# start main Program ##########################
 ###############################################################
-if __name__ == '__main__':
+def createAllNlElsetsInREgionParaConf():
 
     ###############################
     ######   USER INPUTS  #########
