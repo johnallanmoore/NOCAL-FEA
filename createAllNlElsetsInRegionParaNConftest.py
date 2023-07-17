@@ -23,8 +23,9 @@ def main():
     from dictionary import thisdict 
     import sys
     from getElemInd import getElemInd
-    from multiprocessing_func import multiprocessing_func
-
+    from multiprocessing_func import multiprocessing_func 
+    
+    print(__name__)
     # input deck name without .inp (i.e., the output of this script)
     deckName = thisdict["deckName"]
 

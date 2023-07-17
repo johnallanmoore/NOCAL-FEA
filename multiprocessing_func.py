@@ -9,8 +9,9 @@ def multiprocessing_func(fip, ijk, total, numElements,elemCent, dr):
     
     from getElemInd import getElemInd
     
-    print (str(fip+1) + '/' + str(total))
+    print ((str(fip + 1)) + '/' + str(total))
 
     elemInd = getElemInd(fip, numElements, elemCent, dr)
+
 
     return elemInd
