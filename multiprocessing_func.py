@@ -13,5 +13,6 @@ def multiprocessing_func(fip, ijk, total, numElements,elemCent, dr):
 
     elemInd = getElemInd(fip, numElements, elemCent, dr)
 
-
+    print("this is the name of the function:" + __name__)
+    
     return elemInd

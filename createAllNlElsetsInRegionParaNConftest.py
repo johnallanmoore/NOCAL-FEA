@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-
-#import numpy as np
 #import datetime
 #import multiprocessing
 #from functools import partial
@@ -150,6 +148,6 @@ def main():
     fileOutput2.close()
     fileOutput3.close()
     
-if __name__=="__main__":
-    main()
+#if __name__=="__main__":
+    #main()
 

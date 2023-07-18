@@ -7,37 +7,38 @@ Created on Thu Jun 29 11:24:31 2023
 
 from getNlNodesElems import getNlNodesElem
 from getElemCent import getElemCent
-#from createAllNlElsetsInRegionParaNConf import getElemInd
-#from createAllNlElsetsInRegionParaNConf import multiprocessing_func
+from createAllNlElsetsInRegionParaNConf import getElemInd
+from createAllNlElsetsInRegionParaNConf import multiprocessing_func
+from createAllNlElsetsInRegionParaNConf import createAllNlElsetsInREgionParaConf
 #from runNonlocalFip import runNonlocalFip
-from createAllNlElsetsInRegionParaNConftest import main
+#from createAllNlElsetsInRegionParaNConftest import main
 from dictionary import thisdict 
-import numpy as np
+#import numpy as np
 
 getNlNodesElem()
 getElemCent()
-main()
+#createAllNlElsetsInREgionParaConf()
+#main()
 #runNonlocalFip()
 #getElemInd(f, numElements, elemCent, dr)
 #multiprocessing_func(fip, ijk, total, numElements, elemCent, dr)
 
-def foo():
-    from multiprocessing_func import multiprocessing_func
+# def foo():
+#     from multiprocessing_func import multiprocessing_func
 
-    MP = multiprocessing_func(fip, ijk, total, numElements, elemCent, dr)
-    result = MP.run()
+#     MP = multiprocessing_func(fip, ijk, total, numElements, elemCent, dr)
 
-print(__name__)
+# print(__name__)
 
-if __name__ == '__main__':
-    total = 1331
-    fip = range(total)
-    ijk = range(total)
-    numElements = 1331
-    dr = 0.1336
-    deckName = thisdict["deckName"]
-    elemCentFile = deckName +'-ElemCent.inp'
-    elemCent = np.loadtxt(elemCentFile,delimiter=',')
-    foo()  
+# if __name__ == '__main__':
+#     total = 1331
+#     fip = range(total)
+#     ijk = range(total)
+#     numElements = 1331
+#     dr = 0.1336
+#     deckName = thisdict["deckName"]
+#     elemCentFile = deckName +'-ElemCent.inp'
+#     elemCent = np.loadtxt(elemCentFile,delimiter=',')
+#     foo()  
     
-main()
+# main()
