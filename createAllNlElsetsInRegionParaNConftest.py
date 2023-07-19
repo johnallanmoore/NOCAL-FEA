@@ -8,7 +8,8 @@
 ################################################################
 ################# start main Program ##########################
 ###############################################################
-def main():
+def createVolume():
+
 
     ###############################
     ######   USER INPUTS  #########
@@ -23,7 +24,6 @@ def main():
     from getElemInd import getElemInd
     from multiprocessing_func import multiprocessing_func 
     
-    print(__name__)
     # input deck name without .inp (i.e., the output of this script)
     deckName = thisdict["deckName"]
 

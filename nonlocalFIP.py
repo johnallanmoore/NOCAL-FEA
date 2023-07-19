@@ -16,7 +16,7 @@ def nonlocalFIP():
 
     print('nonlocal post processing ' + resultsFileName)
 
-    isNonConf = False
+    isNonConf = thisdict["isNonConf"]
 
     if isNonConf == True:
         outputfilename1=resultsPath+resultsFileName+'-nonlocalFIP_NC.txt'

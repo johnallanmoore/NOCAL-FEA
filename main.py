@@ -11,7 +11,6 @@ from runNonlocalFip import runNonlocalFip
 from createAllNlElsetsInRegionParaNConftest import createVolume
 from dictionary import thisdict 
 
-
 if __name__=="__main__":
     getNlNodesElem()
     getElemCent()
