@@ -25,6 +25,7 @@ def createVolume():
     import sys
     from getElemInd import getElemInd
     from multiprocessing_func import multiprocessing_func 
+    import warnings
     
     # input deck name without .inp (i.e., the output of this script)
     deckName = thisdict["deckName"]
@@ -69,7 +70,9 @@ def createVolume():
     nodes = np.loadtxt(nodeFile,delimiter=',')
     elements = np.loadtxt(elementFile,delimiter=',',dtype=int)
     elemCent = np.loadtxt(elemCentFile,delimiter=',')
-    matrixElset = np.loadtxt(elsetFile,dtype=int)
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        matrixElset = np.loadtxt(elsetFile,dtype=int)
     matrixElsetInd = matrixElset-1
 
     # assumes element numbers start at 1 with no breaks
