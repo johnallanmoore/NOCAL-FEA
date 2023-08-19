@@ -16,7 +16,6 @@ from dictionary import thisdict
 
 if __name__=="__main__":
     runOnly = thisdict['runOnly']
-    print
     if runOnly.lower() == 'getnlnodeselem': 
         getNlNodesElem()
     elif runOnly.lower() == 'getelemcent':
