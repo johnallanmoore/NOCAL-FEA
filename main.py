@@ -11,11 +11,25 @@ from getNlNodesElems import getNlNodesElem
 from getElemCent import getElemCent
 from runNonlocalFip import runNonlocalFip
 from createAllNlElsetsInRegionParaNConftest import createVolume
+from plot import plotNl
 from dictionary import thisdict 
 
 if __name__=="__main__":
-    getNlNodesElem()
-    getElemCent()
-    createVolume()
-    runNonlocalFip()
-    
+    runOnly = thisdict['runOnly']
+    print
+    if runOnly.lower() == 'getnlnodeselem': 
+        getNlNodesElem()
+    elif runOnly.lower() == 'getelemcent':
+        getElemCent()
+    elif runOnly.lower() == 'createvolume':
+        createVolume()
+    elif runOnly.lower() == 'plotnl':
+        plotNl()
+    elif runOnly.lower() == 'runnonlocalfip':
+        runNonlocalFip()
+    else:
+        getNlNodesElem()
+        getElemCent()
+        createVolume()
+        plotNl()
+        runNonlocalFip()
