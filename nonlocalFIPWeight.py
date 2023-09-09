@@ -2,7 +2,7 @@
 #USE THIS ONE - ayushi
 
 def nonlocalFIPWeight():
-    import math
+    
     import datetime
 
     import numpy as np
@@ -23,9 +23,11 @@ def nonlocalFIPWeight():
 
     outputfilename1=resultsPath+resultsFileName+'-nonlocalFIP_NCW.txt'
     
-
     ## open txt file to write to
-    out1 = open(outputfilename1,'w')
+    try:
+        out1 = open(outputfilename1,'w')
+    except:
+        out1 = open('.' + outputfilename1,'w')
     elsetsFile = deckName +'-ElsetsMat.inp'
 
     elsetsMat = np.loadtxt(elsetsFile,delimiter=',',dtype=int)
@@ -37,8 +39,10 @@ def nonlocalFIPWeight():
     numVols = len(elsetsMat[:,0])
 
     fipFile = dataPath + resultsFileName
-    localFipMat = np.loadtxt(fipFile,delimiter=',')
-
+    try:
+        localFipMat = np.loadtxt(fipFile,delimiter=',')
+    except:
+        localFipMat = np.loadtxt('.' + fipFile,delimiter=',')
     numSteps = len(localFipMat[0,:])-1
     numElem  = len(localFipMat[:,0])
 

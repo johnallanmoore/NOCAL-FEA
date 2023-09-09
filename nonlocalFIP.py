@@ -3,7 +3,7 @@
 
 def nonlocalFIP():
 
-    import math
+
     import datetime
 
     import numpy as np
@@ -27,8 +27,11 @@ def nonlocalFIP():
         outputfilename1=resultsPath+resultsFileName+'-nonlocalFIP_C.txt'
 
     ## open txt file to write to
-    out1 = open(outputfilename1,'w')
-
+    try:
+        out1 = open(outputfilename1,'w')
+    except:
+        out1 = open('.' + outputfilename1,'w')
+        
     elsetsFile = deckName +'-ElsetsMat.inp'
 
     elsetsMat = np.loadtxt(elsetsFile,delimiter=',',dtype=int)
@@ -37,8 +40,10 @@ def nonlocalFIP():
     #numVols = len(elsetsMat)
 
     fipFile = dataPath + resultsFileName
-    localFipMat = np.loadtxt(fipFile,delimiter=',')
-
+    try:
+        localFipMat = np.loadtxt(fipFile,delimiter=',')
+    except:
+        localFipMat = np.loadtxt('.'+fipFile,delimiter=',')
     numSteps = len(localFipMat[0,:])-1
     numElem  = len(localFipMat[:,0])
 

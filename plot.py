@@ -38,7 +38,10 @@ def plotNl():
             ax.set_xlabel('x')
             ax.set_ylabel('y')
             ax.set_zlabel('z')
-            fig.savefig('./results/FigureVol1.png')
+            try:
+                fig.savefig('./results/FigureVol1.png')
+            except:
+                fig.savefig('../results/FigureVol1.png')
         else:
             for i in range(len(vol2Plot)):
                     if vol2Plot[i] > numVols:
@@ -54,6 +57,8 @@ def plotNl():
                     ax.set_xlabel('x')
                     ax.set_ylabel('y')
                     ax.set_zlabel('z')
-                    fig.savefig('./results/FigureVol' + str(vol2Plot[i]) + '.png')
-
+                    try:
+                        fig.savefig('./results/FigureVol' + str(vol2Plot[i]) + '.png')
+                    except:
+                        fig.savefig('../results/FigureVol' + str(vol2Plot[i]) + '.png')
         #plt.show()
