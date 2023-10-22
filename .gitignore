@@ -12,3 +12,4 @@ nl*.inp
 *.orig
 /results/*
 .DS_Store
+/data/testData.txt
