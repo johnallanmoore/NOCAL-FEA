@@ -1,62 +1,17 @@
 #!/usr/bin/python
 
-#DONT USE THIS ONE -ayushi chandel
-#import numpy as np
+#USE THIS ONE - ayushi 
+
 #import datetime
 #import multiprocessing
 #from functools import partial
 #from dictionary import thisdict 
 
-def getElemInd(f, numElements, elemCent, dr):
-    
-    import numpy as np
-    import datetime
-    import multiprocessing
-    from functools import partial
-    from dictionary import thisdict 
-    
-    # f is the counter for the nonlocal volume
-    elemInd = np.empty((numElements,2))
-    elemInd[:] = np.nan
-
-    counter = 0
-
-    x0 = elemCent[f,1]
-    y0 = elemCent[f,2]
-    z0 = elemCent[f,3]
-
-    for e in range(numElements):
-        xP = elemCent[e,1]
-        yP = elemCent[e,2]
-        zP = elemCent[e,3]
-
-        x1 = abs(xP - x0);
-        y1 = abs(yP - y0);
-        z1 = abs(zP - z0);
-
-        r = np.sqrt(x1**2. + y1**2. +z1**2.);
-        if r <= dr:
-            elemInd[counter,0] = elemCent[e,0]
-            elemInd[counter,1] = r
-            counter = counter + 1
-
-    elemInd = elemInd[~np.isnan(elemInd)]
-    #elemInd = elemInd.astype(np.int64)
-
-    return elemInd
-
-def multiprocessing_func(fip, ijk, total, numElements,elemCent, dr):
-    
-    print (str(fip+1) + '/' + str(total))
-
-    elemInd = getElemInd(fip, numElements, elemCent, dr)
-
-    return elemInd
-
 ################################################################
 ################# start main Program ##########################
 ###############################################################
-def createAllNlElsetsInREgionParaConf():
+def createVolume():
+
 
     ###############################
     ######   USER INPUTS  #########
@@ -67,7 +22,11 @@ def createAllNlElsetsInREgionParaConf():
     import multiprocessing
     from functools import partial
     from dictionary import thisdict 
-
+    import sys
+    from getElemInd import getElemInd
+    from multiprocessing_func import multiprocessing_func 
+    import warnings
+    
     # input deck name without .inp (i.e., the output of this script)
     deckName = thisdict["deckName"]
 
@@ -111,7 +70,9 @@ def createAllNlElsetsInREgionParaConf():
     nodes = np.loadtxt(nodeFile,delimiter=',')
     elements = np.loadtxt(elementFile,delimiter=',',dtype=int)
     elemCent = np.loadtxt(elemCentFile,delimiter=',')
-    matrixElset = np.loadtxt(elsetFile,dtype=int)
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        matrixElset = np.loadtxt(elsetFile,dtype=int)
     matrixElsetInd = matrixElset-1
 
     # assumes element numbers start at 1 with no breaks
@@ -187,8 +148,11 @@ def createAllNlElsetsInREgionParaConf():
         fileOutput3.write('\n')
 
     print ('end fip count           : ' + str(datetime.datetime.now()))
-
+    
     fileOutput.close()
     fileOutput2.close()
     fileOutput3.close()
+    
+#if __name__=="__main__":
+    #main()
 

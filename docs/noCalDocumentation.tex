@@ -24,7 +24,7 @@
 \newcommand{\Sec}{Section }
 
 \newcommand{\inputDeckName}{dictionary.py }
-\newcommand{\mainFileName}{mainfunctiongithub.py }
+\newcommand{\mainFileName}{main.py }
 
 \begin{document} 
 %%
@@ -37,7 +37,7 @@
 %%trim={<left> <lower> <right> <upper>}
 %%
 %%
-{\centering  Version 1.0 \\
+{\centering  Version 0.1.0 \\
 Developed by \\
 John A. Moore, PhD \\
 Caitlin Martinez \\
@@ -146,11 +146,72 @@ Module Location\\
 \emph{Float} \\
 Length scale $l$ for \Eq \ref{eq:phi}, It is only used if isWeight=True\\
 Example:\\
-You want to weight over a region of $l=0.13365046175$
+You want to weight over a region of $l=0.13365046175$\\
 {$\tt{'L' : 0.13365046175}$}\\
 Module Location\\
 \begin{itemize}
   \item nonlocalFIPWeight.py
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{isNonConf}
+\emph{boolean} \\
+Flag to tell if you should use conformal or nonconformal volumes
+If you want conformal volumes isNonConf=True
+If you want nonconformal volumes sNonConf=False \\
+Example:\\
+If you want conformal volumes \\
+{$\tt{'isNonConf' : True}$}\\
+Module Location\\
+\begin{itemize}
+  \item nonlocalFIP.py
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{plotVolumes}
+\emph{boolean} \\
+Flag to tell if Nocal should produce plots of specific nonlocal volumes
+If you want plots (stored in results) plotVolumes=True
+If you do not want plots plotVolumes=False \\
+Example:\\
+If you want plots \\
+{$\tt{'plotVolumes : True}$}\\
+Module Location\\
+\begin{itemize}
+  \item plot.py
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{vol2Plot}
+\emph{float} or \emph{array}  \\
+Only used if plotVolumes=True
+This tells Nocal what number of volumes you want to plot. Note the plots are stored in the results directory and not actually pushed to the screen \\
+Example:\\
+If you want to plot volume 1, 3 and 50 \\
+{$\tt{'vol2Plot' : [1,3,50]}$}\\
+If you want to plot only volume 100 \\
+{$\tt{'vol2Plot' : 100}$}\\
+Module Location\\
+\begin{itemize}
+  \item plot.py
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{runOnly}
+\emph{string}   \\
+This allows you to only run various parts of the preprocessing, plotting, or post processing. For example if you only want to plot some nonlocal volumes you can do this without having to re-determine all the nonlocal volumes and post processes, etc.
+The options are
+\begin{itemize}
+  \item {\tt{getNlNodesElem}}, will only extract the nodes and elements from the mesh
+    \item {\tt{getElemCent}}, will only extract the centroids on nodes and elements (which have to be already extracted from the mesh)
+    \item {\tt{createVolume}}, will only create the nonlocal volumes 
+      \item {\tt{plotNl}}, will only create plots and will not pre/post process anything
+      \item {\tt{runNonlocalFip}}, will only post process the results
+\end{itemize}
+Example:\\
+If you only want to plot and not pre/post process then \\
+{$\tt{'runOnly': 'plotNl'}$}\\
+If you want to run the whole code \\
+{$\tt{'runOnly': 'none'}$}\\
+Module Location\\
+\begin{itemize}
+  \item main.py
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%              RunningNocal       %%%%%%%%%%%%%%

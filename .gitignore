@@ -11,3 +11,4 @@ nl*.inp
 *BACKUP*
 *.orig
 /results/*
+.DS_Store
